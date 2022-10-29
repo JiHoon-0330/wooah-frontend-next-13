@@ -1,7 +1,7 @@
 import { rest } from "apis";
 import { use } from "react";
-import WeverseClient from "./(weverse)/client";
-import WeverseList from "./(weverse)/weverse-list";
+import WeverseClient from "./client";
+import WeverseList from "./weverse-list";
 
 const Page = () => {
   const { data, lastId } = use(rest.getWeverse());
