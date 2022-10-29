@@ -1,0 +1,14 @@
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hashtag {
+  color: var(--hashtag);
+}
+
+.screen-name {
+  font-size: small;
+  font-weight: 700;
+  color: #6b7280;
+}

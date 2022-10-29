@@ -4,26 +4,25 @@ import { Rest } from "apis";
 import Loading from "components/loading";
 import { useApi, useObserver } from "hooks";
 import { FC, useCallback, useEffect, useState } from "react";
-import WeverseList from "./weverse-list";
+import TwitterList from "./twitter-list";
 
 type Props = {
   next: string;
 };
 
-const WeverseClient: FC<Props> = ({ next }) => {
-  const [lastId, setLastId] = useState(next);
+const TwitterClient: FC<Props> = ({ next }) => {
+  const [cursor, setCursor] = useState(next);
   const [list, setList] = useState<
-    Awaited<ReturnType<Rest["getWeverse"]>>["data"]
+    Awaited<ReturnType<Rest["getTwitter"]>>["data"]
   >([]);
 
-  const { data, error } = useApi("getWeverse", lastId);
+  const { data } = useApi("getTwitter", cursor);
 
   const callback = useCallback(() => {
-    if (data?.hasMore) {
-      setLastId(data?.lastId);
+    if (data?.cursor) {
+      setCursor(data.cursor);
     }
   }, [data]);
-
   const { ref } = useObserver(callback);
 
   useEffect(() => {
@@ -34,10 +33,10 @@ const WeverseClient: FC<Props> = ({ next }) => {
 
   return (
     <>
-      {data && <WeverseList data={list} observer={ref} />}
+      {!!list?.length && <TwitterList data={list} observer={ref} />}
       <Loading />
     </>
   );
 };
 
-export default WeverseClient;
+export default TwitterClient;

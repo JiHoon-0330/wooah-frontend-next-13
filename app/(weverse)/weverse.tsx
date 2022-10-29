@@ -28,7 +28,6 @@ const Weverse: FC<Props> = ({ data }) => {
     backgroundColor: isArtist(data.author)
       ? colorByWeverseMemberId(data.author.memberId)
       : css("--card-bg-default"),
-    padding: 13,
   };
 
   return (

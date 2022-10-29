@@ -15,9 +15,13 @@ const Body: FC<Props> = ({ body, formatter, ...style }) => {
   const formattedBody = formatter instanceof Function ? formatter(body) : body;
 
   return (
-    <div style={style} className={cn("body")}>
-      {formattedBody}
-    </div>
+    <div
+      style={style}
+      className={cn("body")}
+      dangerouslySetInnerHTML={{
+        __html: formattedBody,
+      }}
+    />
   );
 };
 

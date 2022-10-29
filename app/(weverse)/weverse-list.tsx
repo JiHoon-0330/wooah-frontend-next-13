@@ -14,35 +14,36 @@ const WeverseList: FC<Props> = ({ data, observer }) => {
 
   return (
     <>
-      {data.map((item, index) => {
-        const isObserver = index === data?.length - 1;
+      {!!data?.length &&
+        data.map((item, index) => {
+          const isObserver = index === data?.length - 1;
 
-        if (prevPostIdList.has(item.postId)) {
-          return isObserver ? (
-            <div
-              style={{
-                height: 1,
-              }}
-              ref={observer}
-              key={`${item.postId}:${index}`}
-            />
-          ) : null;
-        }
+          if (prevPostIdList.has(item.postId)) {
+            return isObserver ? (
+              <div
+                style={{
+                  height: 1,
+                }}
+                ref={observer}
+                key={`${item.postId}:${index}`}
+              />
+            ) : null;
+          }
 
-        prevPostIdList.add(item.postId);
+          prevPostIdList.add(item.postId);
 
-        return (
-          <Card
-            observer={isObserver ? observer : undefined}
-            key={item.postId}
-            marginBottom={40}
-            padding={7}
-            backgroundColor={css("--card-bg-light")}
-          >
-            <Weverse data={item} />
-          </Card>
-        );
-      })}
+          return (
+            <Card
+              observer={isObserver ? observer : undefined}
+              key={item.postId}
+              marginBottom={40}
+              padding={7}
+              backgroundColor={css("--card-bg-light")}
+            >
+              <Weverse data={item} />
+            </Card>
+          );
+        })}
     </>
   );
 };

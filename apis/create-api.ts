@@ -1,6 +1,6 @@
 import { CreateApi } from "./create-api.type";
 
-export const createApi: CreateApi = (defaultConfig) => {
+const createApi: CreateApi = (defaultConfig) => {
   return async (config) => {
     if (typeof config?.params === "object") {
       config.url = `${config.url ?? ""}${Object.entries(config.params)
@@ -19,3 +19,7 @@ export const createApi: CreateApi = (defaultConfig) => {
     return res.json();
   };
 };
+
+export const api = createApi({
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+});

@@ -28,7 +28,7 @@ export type WeverseComment = {
   translated?: string | null;
 };
 
-type Response = {
+type GetWeverse = {
   data: {
     postId: string;
     body: string;
@@ -45,5 +45,5 @@ type Response = {
 };
 
 export type WeverseApis = {
-  getWeverse(from?: string): Promise<Response>;
+  getWeverse(from?: string): Promise<GetWeverse>;
 };
