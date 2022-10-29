@@ -1,7 +1,27 @@
-html,
-body {
+:root {
+  --NANA: #dbeafe;
+  --WOOYEON: #ede9fe;
+  --SORA: #fee2e2;
+  --LUCY: #fce7f3;
+  --MINSEO: #d1fae5;
+  --WOOAH: #ffedd2;
+
+  --card-bg-light: #f3f4f6;
+  --card-bg-default: #e5e7eb;
+
+  --radius-default: 10px;
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none;
+  white-space: pre-line;
+}
+
+html,
+body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -9,18 +29,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }

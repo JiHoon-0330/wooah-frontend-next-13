@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "isolatedModules": false
+  },
+  "exclude": ["**/*.ts", "**/*.tsx"],
+  "include": ["scripts"]
+}
