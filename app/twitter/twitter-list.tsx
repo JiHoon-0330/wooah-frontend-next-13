@@ -14,18 +14,18 @@ const TwitterList: FC<Props> = ({ data, observer }) => {
     <>
       {!!data?.length &&
         data?.map((item, index) => {
-          const isObserver = index === data?.length - 2;
+          const isObserver = index === data?.length - 1;
 
           if (prevList.has(item.sortIndex)) {
-            return (
+            return isObserver ? (
               <div
                 style={{
                   height: 1,
                 }}
                 key={`${item.sortIndex} ${index}`}
-                ref={isObserver ? observer : undefined}
+                ref={observer}
               />
-            );
+            ) : null;
           }
 
           prevList.add(item.sortIndex);

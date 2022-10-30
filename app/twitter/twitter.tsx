@@ -14,7 +14,7 @@ import styles from "./twitter.module.css";
 
 const cn = classNames(styles);
 
-const parseLink = (href: string, display: string) => {
+export const parseLink = (href: string, display: string) => {
   return `<a href="${href}" target="_blank" class="${cn(
     "link",
     "hashtag",

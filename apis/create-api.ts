@@ -15,7 +15,13 @@ const createApi: CreateApi = (defaultConfig) => {
 
     const res = await fetch(
       `${config?.baseURL ?? defaultConfig?.baseURL}${config?.url ?? ""}`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      },
     );
+
     return res.json();
   };
 };
