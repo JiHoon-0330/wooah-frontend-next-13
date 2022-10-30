@@ -1,7 +1,7 @@
 import { api } from "./create-api";
-import { TwitterApi } from "./twitter.type";
+import { TwitterApis } from "./twitter.type";
 
-export const twitterApi: TwitterApi = {
+export const twitterApis: TwitterApis = {
   getTwitter(from) {
     return api({
       method: "GET",

@@ -33,6 +33,8 @@ const RootNav: FC = () => {
             key={sns}
             href={link}
             style={{
+              position: "sticky",
+              bottom: 0,
               flex: 1,
               textAlign: "center",
               padding: "6px 0",

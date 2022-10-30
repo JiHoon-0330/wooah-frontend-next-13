@@ -1,7 +1,7 @@
 import { WeverseMemberId } from "apis/weverse.type";
 import { css } from "./style";
 
-export const valueByWeverseMemberId =
+export const valueByMember =
   <T extends any>(
     nana: T,
     wooyeon: T,
@@ -37,7 +37,7 @@ export const valueByWeverseMemberId =
     }
   };
 
-export const colorByWeverseMemberId = valueByWeverseMemberId(
+export const colorByMember = valueByMember(
   css("--NANA"),
   css("--WOOYEON"),
   css("--SORA"),

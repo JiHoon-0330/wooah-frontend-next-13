@@ -13,7 +13,7 @@ import NextImage from "components/next-image";
 import ProfileName from "components/profile-name";
 import Video from "components/video";
 import { CSSProperties, FC, memo } from "react";
-import { colorByWeverseMemberId, css, weverseImageUrlReplace } from "utils";
+import { colorByMember, css, weverseImageUrlReplace } from "utils";
 
 const isArtist = (
   type: WeverseAuthor<WeverseProfileType>,
@@ -26,7 +26,7 @@ type Props = {
 const Weverse: FC<Props> = ({ data }) => {
   const style: CSSProperties = {
     backgroundColor: isArtist(data.author)
-      ? colorByWeverseMemberId(data.author.memberId)
+      ? colorByMember(data.author.memberId)
       : css("--card-bg-default"),
   };
 

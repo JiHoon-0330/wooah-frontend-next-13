@@ -1,6 +1,6 @@
 import { CSSProperties, FC } from "react";
 import { classNames } from "utils";
-import styles from "./style.module.css";
+import styles from "./body.module.css";
 
 const cn = classNames(styles);
 

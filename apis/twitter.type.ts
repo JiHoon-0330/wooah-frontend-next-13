@@ -45,6 +45,6 @@ type GetTwitter = {
   cursor: string;
 };
 
-export type TwitterApi = {
+export type TwitterApis = {
   getTwitter(from?: string): Promise<GetTwitter>;
 };

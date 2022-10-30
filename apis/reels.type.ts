@@ -9,6 +9,6 @@ type GetReels = {
   more_available: boolean;
 };
 
-export type ReelsApi = {
+export type ReelsApis = {
   getReels(from?: string): Promise<GetReels>;
 };

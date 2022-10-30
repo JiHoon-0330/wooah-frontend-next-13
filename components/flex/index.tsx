@@ -1,6 +1,6 @@
 import { CSSProperties, FC, ReactNode } from "react";
 import { classNames } from "utils";
-import styles from "./style.module.css";
+import styles from "./flex.module.css";
 
 const cn = classNames(styles);
 

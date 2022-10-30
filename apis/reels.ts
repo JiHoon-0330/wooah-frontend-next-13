@@ -1,7 +1,7 @@
 import { api } from "./create-api";
-import { ReelsApi } from "./reels.type";
+import { ReelsApis } from "./reels.type";
 
-export const reelsApi: ReelsApi = {
+export const reelsApis: ReelsApis = {
   getReels(from) {
     return api({
       method: "GET",

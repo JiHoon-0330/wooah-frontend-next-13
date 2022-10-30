@@ -1,6 +1,12 @@
-import { reelsApi } from "./reels";
-import { twitterApi } from "./twitter";
+import { reelsApis } from "./reels";
+import { scheduleApis } from "./schedule";
+import { twitterApis } from "./twitter";
 import { weverseApis } from "./weverse";
 
-export const rest = Object.assign({}, weverseApis, twitterApi, reelsApi);
+export const rest = Object.assign(
+  weverseApis,
+  twitterApis,
+  reelsApis,
+  scheduleApis,
+);
 export type Rest = typeof rest;
